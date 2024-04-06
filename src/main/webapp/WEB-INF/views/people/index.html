@@ -7,7 +7,7 @@
 <body>
 
 <div th:each="person : ${people}">
-  <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
+  <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName() + ', ' + person.getAge()}">user</a>
 </div>
 
 <br/>
@@ -17,7 +17,7 @@
 </a>
 
 <form th:method="DELETE" th:action="@{/people}">
-  <input type="submit" value="Clear">
+  <input type="submit" value="Clear DB">
 </form>
 
 </body>
