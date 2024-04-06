@@ -10,5 +10,15 @@
   <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
 </div>
 
+<br/>
+
+<a th:href="@{/people/new}">
+  <button>Add new person to base</button>
+</a>
+
+<form th:method="DELETE" th:action="@{/people}">
+  <input type="submit" value="Clear">
+</form>
+
 </body>
 </html>
