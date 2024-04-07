@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Все люди</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
 
-<div th:each="person : ${people}">
-  <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName() + ', ' + person.getAge()}">user</a>
-</div>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+    </tr>
+
+    <tr th:each="person : ${people}">
+        <th th:text="${person.getId()}">ID</th>
+        <th th:text="${person.getName()}">Name</th>
+        <th th:text="${person.getAge()}">Age</th>
+        <th th:text="${person.getEmail()}">Email</th>
+        <th>
+            <a th:href="@{/people/{id}/edit(id=${person.getId()})}">
+                <button>Edit Person</button>
+            </a>
+            <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+                <input type="submit" value="Delete"/>
+            </form>
+        </th>
+    </tr>
+</table>
 
 <br/>
 
 <a th:href="@{/people/new}">
-  <button>Add new person to base</button>
+    <button>Add new person to base</button>
 </a>
 
+<br/>
+<br/>
+
 <form th:method="DELETE" th:action="@{/people}">
-  <input type="submit" value="Clear DB">
+    <input type="submit" value="Clear DB">
 </form>
 
 </body>

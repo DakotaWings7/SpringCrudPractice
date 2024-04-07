@@ -11,9 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2d28b8db-b7d9-46d8-8112-6b2a47aa9486" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aliev/springcourse/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aliev/springcourse/config/SpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/aliev/springcourse/dao/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aliev/springcourse/dao/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/people/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +181,8 @@
       <workItem from="1712391809869" duration="1272000" />
       <workItem from="1712393096029" duration="6880000" />
       <workItem from="1712424664799" duration="7667000" />
-      <workItem from="1712439324007" duration="2532000" />
+      <workItem from="1712439324007" duration="3225000" />
+      <workItem from="1712483537158" duration="4944000" />
     </task>
     <servers />
   </component>
