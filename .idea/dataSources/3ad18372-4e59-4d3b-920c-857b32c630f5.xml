@@ -11,9 +11,9 @@
 4||10|c|G
 4||10|C|G
 4||10|T|G</Grants>
-      <IntrospectionStateNumber>1460069</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1460135</IntrospectionStateNumber>
       <ServerVersion>16.0</ServerVersion>
-      <StartupTime>1712482986</StartupTime>
+      <StartupTime>1712584274</StartupTime>
       <TimeZones>true ACDT
 true ACSST
 false ACST
@@ -809,21 +809,21 @@ false Zulu
 14643||10|C|G
 14643||-9223372036854775808|U|G
 14643||10|U|G</Grants>
-      <IntrospectionStateNumber>1460069</IntrospectionStateNumber>
+      <IntrospectionStateNumber>1460135</IntrospectionStateNumber>
       <ObjectId>16766</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
-    <database id="3" parent="1" name="postgres">
-      <Comment>default administrative connection database</Comment>
-      <ObjectId>5</ObjectId>
+    <database id="3" parent="1" name="hibernate_bd">
+      <ObjectId>16819</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="4" parent="1" name="mydatabase">
       <ObjectId>16399</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
-    <database id="5" parent="1" name="hibernate_bd">
-      <ObjectId>16819</ObjectId>
+    <database id="5" parent="1" name="postgres">
+      <Comment>default administrative connection database</Comment>
+      <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="6" parent="1" name="rtkit_golos">
@@ -4245,53 +4245,93 @@ false Zulu
     <schema id="267" parent="2" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>1460069</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2024-04-07.13:21:19.314</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2024-04-07.10:21:20</LocalIntrospectionTimestamp>
+      <IntrospectionStateNumber>1460135</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2024-04-08.17:49:32.861</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2024-04-08.14:49:33</LocalIntrospectionTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>524</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
     </schema>
     <sequence id="268" parent="267" name="person_id_seq">
       <DasType>integer|0s</DasType>
-      <ObjectId>16809</ObjectId>
-      <SequenceIdentity>1(2007)</SequenceIdentity>
+      <ObjectId>61868</ObjectId>
+      <SequenceIdentity>1(1)</SequenceIdentity>
       <StartValue>1</StartValue>
-      <StateNumber>1435387</StateNumber>
+      <StateNumber>1460134</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="269" parent="267" name="person">
-      <ObjectId>16810</ObjectId>
-      <StateNumber>1436404</StateNumber>
+      <ObjectId>61869</ObjectId>
+      <StateNumber>1460134</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="270" parent="269" name="id">
+    <check id="270" parent="269" name="person_age_check">
+      <ColNames>age</ColNames>
+      <ObjectId>61872</ObjectId>
+      <Predicate>age &gt; 0</Predicate>
+      <StateNumber>1460134</StateNumber>
+    </check>
+    <column id="271" parent="269" name="id">
       <DasType>integer|0s</DasType>
       <IdentityKind>by-default</IdentityKind>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>1435360</StateNumber>
-      <SequenceId>16809</SequenceId>
+      <StateNumber>1460134</StateNumber>
+      <SequenceId>61868</SequenceId>
       <TypeId>23</TypeId>
     </column>
-    <column id="271" parent="269" name="name">
+    <column id="272" parent="269" name="name">
       <DasType>varchar|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>1435360</StateNumber>
+      <StateNumber>1460134</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="272" parent="269" name="age">
+    <column id="273" parent="269" name="age">
       <DasType>integer|0s</DasType>
       <Position>3</Position>
-      <StateNumber>1435360</StateNumber>
+      <StateNumber>1460134</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="273" parent="269" name="email">
+    <column id="274" parent="269" name="email">
       <DasType>varchar|0s</DasType>
       <Position>4</Position>
-      <StateNumber>1435360</StateNumber>
+      <StateNumber>1460134</StateNumber>
       <TypeId>1043</TypeId>
     </column>
+    <index id="275" parent="269" name="person_pkey">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>61875</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1460134</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+    </index>
+    <index id="276" parent="269" name="person_email_key">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>61877</ObjectId>
+      <StateNumber>1460134</StateNumber>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
+    </index>
+    <key id="277" parent="269" name="person_pkey">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>61876</ObjectId>
+      <Primary>1</Primary>
+      <StateNumber>1460134</StateNumber>
+      <UnderlyingIndexId>61875</UnderlyingIndexId>
+    </key>
+    <key id="278" parent="269" name="person_email_key">
+      <NameSurrogate>1</NameSurrogate>
+      <ObjectId>61878</ObjectId>
+      <StateNumber>1460134</StateNumber>
+      <UnderlyingIndexId>61877</UnderlyingIndexId>
+    </key>
   </database-model>
 </dataSource>
