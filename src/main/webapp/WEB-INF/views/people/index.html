@@ -36,18 +36,12 @@
     </tr>
 
     <tr th:each="person : ${people}">
-        <th th:text="${person.getId()}">ID</th>
+        <th>
+           <a th:href="@{/people/{id}(id = ${person.getId()})}" th:text="${person.getId()}">ID</a>
+        </th>
         <th th:text="${person.getName()}">Name</th>
         <th th:text="${person.getAge()}">Age</th>
         <th th:text="${person.getEmail()}">Email</th>
-        <th>
-            <a th:href="@{/people/{id}/edit(id=${person.getId()})}">
-                <button>Edit Person</button>
-            </a>
-            <form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
-                <input type="submit" value="Delete"/>
-            </form>
-        </th>
     </tr>
 </table>
 

@@ -7,6 +7,8 @@ import org.springframework.validation.Validator;
 import ru.aliev.springcourse.dao.PersonDAO;
 import ru.aliev.springcourse.model.Person;
 
+import java.util.Optional;
+
 @Component
 public class PersonValidator implements Validator {
 
@@ -26,7 +28,8 @@ public class PersonValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Person person = (Person) target;
 
-        if (personDAO.show(person.getEmail()).isPresent()) {
+        Optional<Person> personFromDB = personDAO.show(person.getEmail());
+        if (personFromDB.isPresent() && personFromDB.get().getId() != person.getId()) {
             errors.rejectValue("email", "", "User with that email is already exists.");
         }
     }
